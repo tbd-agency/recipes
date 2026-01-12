@@ -5,9 +5,6 @@
         "bundles": {
           "Tbd\\TbdComponentBundle\\TbdComponentBundle": ["all"]
         },
-        "copy-from-recipe": {
-          "config/": "%CONFIG_DIR%/"
-        },
         "refactor": {
           "assets/bootstrap.js": [
             {
@@ -15,6 +12,37 @@
               "replace": "export const app = startStimulusApp(require.context(\n    '@symfony/stimulus-bridge/lazy-controller-loader!./controllers',\n    true,\n    /\\.[jt]sx?$/\n));\n\n// Also load controllers from the tbd-component-bundle (inside vendor/)\nconst tbdControllers = require.context(\n    '@symfony/stimulus-bridge/lazy-controller-loader!../vendor/tbd/tbd-component-bundle/assets/controllers',\n    true,\n    /_controller\\.[jt]sx?$/\n);\n\nfor (const key of tbdControllers.keys()) {\n    const mod = tbdControllers(key);\n\n    const name = key\n        .replace(/^\\.\\//, '')\n        .replace(/\\.[jt]sx?$/, '')\n        .replace(/_controller$/, '')\n        .replace(/\\//g, '--')\n        .replace(/_/g, '-');\n\n    app.register(name, mod.default);\n}\n"
             }
           ]
+        }
+      },
+      "files": {
+        "config/packages/tbd_component.yaml": {
+          "contents": [
+            "tbd_component:",
+            "  button:",
+            "    variants:",
+            "      primary: 'text-white fill-white bg-orange-400 hover:bg-orange-500 focus:ring-orange-300'",
+            "    sizes:",
+            "      sm: 'p-2'",
+            "      md: 'px-4 py-2'",
+            "      lg: 'px-6 py-4'",
+            "",
+            "  icon:",
+            "    sizes:",
+            "      sm: 'w-3 h-3'",
+            "      md: 'w-4 h-4'",
+            "      lg: 'w-5 h-5'",
+            ""
+          ],
+          "executable": false
+        },
+        "config/packages/twig_component.yaml": {
+          "contents": [
+            "twig_component:",
+            "  defaults:",
+            "    Tbd\\\\TbdComponentBundle\\\\Twig\\\\Components\\\\TBD\\\\: 'components/tbd/'",
+            ""
+          ],
+          "executable": false
         }
       },
       "ref": "c73dc82e559a7cb3b06e855418ed4f7ba2f4d1b1"
