@@ -42,13 +42,13 @@
           "contents": [
             "twig_component:",
             "  defaults:",
-            "    Tbd\\\\TbdComponentBundle\\\\Twig\\\\Components\\\\TBD\\\\: 'components/tbd/'",
+            "    Tbd\\TbdComponentBundle\\Twig\\Components\\TBD\\: 'components/tbd/'",
             ""
           ],
           "executable": false
         }
       },
-      "ref": "8f0c2d7b6a1e4f3a9c0b7d1e2f3a4b5c6d7e8f90"
+      "ref": "1a772e12dce405455a541b570e858f1b08fbd3bf"
     }
   }
 }
