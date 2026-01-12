@@ -38,6 +38,26 @@
           ],
           "executable": false
         },
+        "config/packages/tbd_test.yaml": {
+          "contents": [
+            "tbd_test:",
+            "  button:",
+            "    variants:",
+            "      primary: 'text-white fill-white bg-orange-400 hover:bg-orange-500 focus:ring-orange-300'",
+            "    sizes:",
+            "      sm: 'p-2'",
+            "      md: 'px-4 py-2'",
+            "      lg: 'px-6 py-4'",
+            "",
+            "  icon:",
+            "    sizes:",
+            "      sm: 'w-3 h-3'",
+            "      md: 'w-4 h-4'",
+            "      lg: 'w-5 h-5'",
+            ""
+          ],
+          "executable": false
+        },
         "config/packages/twig_component.yaml": {
           "contents": [
             "twig_component:",
@@ -48,7 +68,7 @@
           "executable": false
         }
       },
-      "ref": "40eb14051d37546b3a858aad01345c18a7274e28"
+      "ref": "3ce0f4f4bf938c81787e5a88e2b63ea5c34c51e2"
     }
   }
 }
