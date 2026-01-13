@@ -11,8 +11,8 @@
         "refactor": {
           "assets/bootstrap.js": [
             {
-              "search": "));",
-              "replace": "));\n\n // Also load controllers from the tbd-component-bundle (inside vendor/)\nconst tbdControllers = require.context(\n    '@symfony/stimulus-bridge/lazy-controller-loader!../vendor/tbd/tbd-component-bundle/assets/controllers',\n    true,\n    /_controller\\.[jt]sx?$/\n);\n\nfor (const key of tbdControllers.keys()) {\n    const mod = tbdControllers(key);\n\n    const name = key\n        .replace(/^\\.\\//, '')\n        .replace(/\\.[jt]sx?$/, '')\n        .replace(/_controller$/, '')\n        .replace(/\\//g, '--')\n        .replace(/_/g, '-');\n\n    app.register(name, mod.default);\n}\n"
+              "search": "export const app = startStimulusApp(require.context(\n    '@symfony/stimulus-bridge/lazy-controller-loader!./controllers',\n    true,\n    /\\.[jt]sx?$/\n));",
+              "replace": "export const app = startStimulusApp(require.context(\n    '@symfony/stimulus-bridge/lazy-controller-loader!./controllers',\n    true,\n    /\\.[jt]sx?$/\n));\n\n// tbd-component-bundle: register controllers (inside vendor/)\nconst tbdControllers = require.context(\n    '@symfony/stimulus-bridge/lazy-controller-loader!../vendor/tbd/tbd-component-bundle/assets/controllers',\n    true,\n    /_controller\\.[jt]sx?$/\n);\n\nfor (const key of tbdControllers.keys()) {\n    const mod = tbdControllers(key);\n\n    const name = key\n        .replace(/^\\.\\//, '')\n        .replace(/\\.[jt]sx?$/, '')\n        .replace(/_controller$/, '')\n        .replace(/\\//g, '--')\n        .replace(/_/g, '-');\n\n    app.register(name, mod.default);\n}\n"
             }
           ]
         }
@@ -42,7 +42,7 @@
           "executable": false
         }
       },
-      "ref": "a0522c79479530c1ac26c235db42352525c96245"
+      "ref": "ccbdb12140ffa2932c0766c83f5a0cd7265f0578"
     }
   }
 }
