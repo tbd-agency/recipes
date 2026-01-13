@@ -5,6 +5,9 @@
         "bundles": {
           "Tbd\\TbdComponentBundle\\TbdComponentBundle": ["all"]
         },
+        "copy-from-recipe": {
+          "config/": "%CONFIG_DIR%"
+        },
         "refactor": {
           "assets/bootstrap.js": [
             {
@@ -39,7 +42,7 @@
           "executable": false
         }
       },
-      "ref": "8a2534d9bbabc6c765e0f1209041295ed9c34508"
+      "ref": "a0522c79479530c1ac26c235db42352525c96245"
     }
   }
 }
