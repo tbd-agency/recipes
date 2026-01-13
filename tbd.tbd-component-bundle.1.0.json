@@ -7,7 +7,7 @@
         },
         "copy-from-recipe": {
           "config/": "%CONFIG_DIR%",
-          "assets/": "%ASSETS_DIR%"
+          "assets/": "assets/"
         },
         "add-lines": [
           {
@@ -37,13 +37,12 @@
             "twig_component:",
             "  defaults:",
             "    Tbd\\TbdComponentBundle\\Twig\\Components\\TBD\\: 'components/tbd/'",
-            "",
-            "test"
+            ""
           ],
           "executable": false
         }
       },
-      "ref": "431f75bfef12353d4294972566a250862aee500a"
+      "ref": "3b4c181e6af0f56aa7f24357672be7f05f03e18f"
     }
   }
 }
