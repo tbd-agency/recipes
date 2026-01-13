@@ -12,7 +12,7 @@
         "add-lines": [
           {
             "file": "assets/bootstrap.js",
-            "position": "end",
+            "position": "bottom",
             "warn_if_missing": true,
             "content": "\n// tbd-component-bundle: register controllers (inside vendor/)\nconst tbdControllers = require.context(\n    '@symfony/stimulus-bridge/lazy-controller-loader!../vendor/tbd/tbd-component-bundle/assets/controllers',\n    true,\n    /_controller\\.[jt]sx?$/\n);\n\nfor (const key of tbdControllers.keys()) {\n    const mod = tbdControllers(key);\n\n    const name = key\n        .replace(/^\\.\\//, '')\n        .replace(/\\.[jt]sx?$/, '')\n        .replace(/_controller$/, '')\n        .replace(/\\//g, '--')\n        .replace(/_/g, '-');\n\n    app.register(name, mod.default);\n}\n"
           }
@@ -44,7 +44,7 @@
           "executable": false
         }
       },
-      "ref": "c6174eaa682f167222dddcaf29c26257a368a6c7"
+      "ref": "6de94d5128eb0996a67f8d6fcf0461e8fe27c535"
     }
   }
 }
