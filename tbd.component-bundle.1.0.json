@@ -3,7 +3,7 @@
     "tbd/tbd-component-bundle": {
       "manifest": {
         "bundles": {
-          "Tbd\\TbdComponentBundle\\TbdComponentBundle": ["all"]
+          "Tbd\\ComponentBundle\\TbdComponentBundle": ["all"]
         },
         "copy-from-recipe": {
           "config/": "%CONFIG_DIR%",
@@ -14,7 +14,7 @@
             "file": "assets/bootstrap.js",
             "position": "bottom",
             "warn_if_missing": true,
-            "content": "// tbd-component-bundle: register controllers (inside vendor/)\nconst tbdControllers = require.context(\n    '@symfony/stimulus-bridge/lazy-controller-loader!../vendor/tbd/tbd-component-bundle/assets/controllers',\n    true,\n    /_controller\\.[jt]sx?$/\n);\n\nfor (const key of tbdControllers.keys()) {\n    const mod = tbdControllers(key);\n\n    const name = key\n        .replace(/^\\.\\//, '')\n        .replace(/\\.[jt]sx?$/, '')\n        .replace(/_controller$/, '')\n        .replace(/\\//g, '--')\n        .replace(/_/g, '-');\n\n    app.register(name, mod.default);\n}\n"
+            "content": "// component-bundle: register controllers (inside vendor/)\nconst tbdControllers = require.context(\n    '@symfony/stimulus-bridge/lazy-controller-loader!../vendor/tbd/tbd-component-bundle/assets/controllers',\n    true,\n    /_controller\\.[jt]sx?$/\n);\n\nfor (const key of tbdControllers.keys()) {\n    const mod = tbdControllers(key);\n\n    const name = key\n        .replace(/^\\.\\//, '')\n        .replace(/\\.[jt]sx?$/, '')\n        .replace(/_controller$/, '')\n        .replace(/\\//g, '--')\n        .replace(/_/g, '-');\n\n    app.register(name, mod.default);\n}\n"
           }
         ]
       },
@@ -26,9 +26,9 @@
             "    variants:",
             "      primary: 'text-white fill-white bg-orange-400 hover:bg-orange-500 focus:ring-orange-300'",
             "    sizes:",
-            "      sm: 'p-2'",
-            "      md: 'px-4 py-2'",
-            "      lg: 'px-6 py-4'",
+            "      sm: 'px-2 py-1 text-xs'",
+            "      md: 'px-4 py-2 text-sm'",
+            "      lg: 'px-6 py-4 text-base'",
             "",
             "  icon:",
             "    sizes:",
@@ -44,7 +44,7 @@
           "executable": false
         }
       },
-      "ref": "f75ae74b54e07d39f829c1c3d12ed65f32d1db65"
+      "ref": "6db4bfe590ff80a4660edac6f22b1670eebd8d2d"
     }
   }
 }

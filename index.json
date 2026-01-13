@@ -1,6 +1,6 @@
 {
   "recipes": {
-    "tbd/tbd-component-bundle": ["1.0"]
+    "tbd/component-bundle": ["1.0"]
   },
   "branch": "main",
   "is_contrib": true,
