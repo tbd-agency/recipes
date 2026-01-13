@@ -7,21 +7,12 @@
         },
         "copy-from-recipe": {
           "config/": "%CONFIG_DIR%",
-          "assets/": "assets/"
-        },
-        "refactor": {
-          "assets/bootstrap.js": [
-            {
-              "search": "export const app = startStimulusApp(require.context(\n    '@symfony/stimulus-bridge/lazy-controller-loader!./controllers',\n    true,\n    /\\.[jt]sx?$/\n));",
-              "replace": "export const app = startStimulusApp(require.context(\n    '@symfony/stimulus-bridge/lazy-controller-loader!./controllers',\n    true,\n    /\\.[jt]sx?$/\n));\n\n// tbd-component-bundle: register controllers (inside vendor/)\nconst tbdControllers = require.context(\n    '@symfony/stimulus-bridge/lazy-controller-loader!../vendor/tbd/tbd-component-bundle/assets/controllers',\n    true,\n    /_controller\\.[jt]sx?$/\n);\n\nfor (const key of tbdControllers.keys()) {\n    const mod = tbdControllers(key);\n\n    const name = key\n        .replace(/^\\.\\//, '')\n        .replace(/\\.[jt]sx?$/, '')\n        .replace(/_controller$/, '')\n        .replace(/\\//g, '--')\n        .replace(/_/g, '-');\n\n    app.register(name, mod.default);\n}\n"
-            }
-          ]
+          "assets/": "%ASSETS_DIR%"
         },
         "add-lines": [
           {
             "file": "assets/bootstrap.js",
-            "content": "// tbd-component-bundle: register controllers (inside vendor/)\\nconst tbdControllers = require.context(\\n    '@symfony/stimulus-bridge/lazy-controller-loader!../vendor/tbd/tbd-component-bundle/assets/controllers',\\n    true,\\n    /_controller\\\\.[jt]sx?$/\\n);\\n\\nfor (const key of tbdControllers.keys()) {\\n    const mod = tbdControllers(key);\\n\\n    const name = key\\n        .replace(/^\\\\.\\\\//, '')\\n        .replace(/\\\\.[jt]sx?$/, '')\\n        .replace(/_controller$/, '')\\n        .replace(/\\\\//g, '--')\\n        .replace(/_/g, '-');\\n\\n    app.register(name, mod.default);\\n}\\n\"",
-            "position": "end"
+            "content": "\n// tbd-component-bundle: register controllers (inside vendor/)\nconst tbdControllers = require.context(\n    '@symfony/stimulus-bridge/lazy-controller-loader!../vendor/tbd/tbd-component-bundle/assets/controllers',\n    true,\n    /_controller\\.[jt]sx?$/\n);\n\nfor (const key of tbdControllers.keys()) {\n    const mod = tbdControllers(key);\n\n    const name = key\n        .replace(/^\\.\\//, '')\n        .replace(/\\.[jt]sx?$/, '')\n        .replace(/_controller$/, '')\n        .replace(/\\//g, '--')\n        .replace(/_/g, '-');\n\n    app.register(name, mod.default);\n}\n"
           }
         ]
       },
@@ -50,7 +41,7 @@
           "executable": false
         }
       },
-      "ref": "91ee6ba2747692eb0778c5c9ebeafce411cca0b4"
+      "ref": "21f7f4019d0881779f260713a310d8a665f3865b"
     }
   }
 }
