@@ -6,7 +6,8 @@
           "Tbd\\TbdComponentBundle\\TbdComponentBundle": ["all"]
         },
         "copy-from-recipe": {
-          "config/": "%CONFIG_DIR%"
+          "config/": "%CONFIG_DIR%",
+          "assets/": "assets/"
         },
         "refactor": {
           "assets/bootstrap.js": [
@@ -15,7 +16,14 @@
               "replace": "export const app = startStimulusApp(require.context(\n    '@symfony/stimulus-bridge/lazy-controller-loader!./controllers',\n    true,\n    /\\.[jt]sx?$/\n));\n\n// tbd-component-bundle: register controllers (inside vendor/)\nconst tbdControllers = require.context(\n    '@symfony/stimulus-bridge/lazy-controller-loader!../vendor/tbd/tbd-component-bundle/assets/controllers',\n    true,\n    /_controller\\.[jt]sx?$/\n);\n\nfor (const key of tbdControllers.keys()) {\n    const mod = tbdControllers(key);\n\n    const name = key\n        .replace(/^\\.\\//, '')\n        .replace(/\\.[jt]sx?$/, '')\n        .replace(/_controller$/, '')\n        .replace(/\\//g, '--')\n        .replace(/_/g, '-');\n\n    app.register(name, mod.default);\n}\n"
             }
           ]
-        }
+        },
+        "add-lines": [
+          {
+            "file": "assets/bootstrap.js",
+            "content": "// tbd-component-bundle: register controllers (inside vendor/)\\nconst tbdControllers = require.context(\\n    '@symfony/stimulus-bridge/lazy-controller-loader!../vendor/tbd/tbd-component-bundle/assets/controllers',\\n    true,\\n    /_controller\\\\.[jt]sx?$/\\n);\\n\\nfor (const key of tbdControllers.keys()) {\\n    const mod = tbdControllers(key);\\n\\n    const name = key\\n        .replace(/^\\\\.\\\\//, '')\\n        .replace(/\\\\.[jt]sx?$/, '')\\n        .replace(/_controller$/, '')\\n        .replace(/\\\\//g, '--')\\n        .replace(/_/g, '-');\\n\\n    app.register(name, mod.default);\\n}\\n\"",
+            "position": "end"
+          }
+        ]
       },
       "files": {
         "config/packages/tbd_component.yaml": {
@@ -42,7 +50,7 @@
           "executable": false
         }
       },
-      "ref": "ccbdb12140ffa2932c0766c83f5a0cd7265f0578"
+      "ref": "91ee6ba2747692eb0778c5c9ebeafce411cca0b4"
     }
   }
 }
