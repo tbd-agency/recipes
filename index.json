@@ -2,11 +2,11 @@
   "recipes": {
     "tbd/tbd-component-bundle": ["1.0"]
   },
-  "branch": "main",
+  "branch": "feature/20260113-bootstrap",
   "is_contrib": true,
   "_links": {
     "repository": "github.com/tbd-agency/recipes",
-    "origin_template": "{package}:{version}@github.com/tbd-agency/recipes:main",
+    "origin_template": "{package}:{version}@github.com/tbd-agency/recipes:feature/20260113-bootstrap",
     "recipe_template": "https://api.github.com/repos/tbd-agency/recipes/contents/{package_dotted}.{version}.json"
   }
 }
