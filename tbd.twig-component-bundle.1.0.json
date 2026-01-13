@@ -1,9 +1,9 @@
 {
   "manifests": {
-    "tbd/component-bundle": {
+    "tbd/twig-component-bundle": {
       "manifest": {
         "bundles": {
-          "Tbd\\ComponentBundle\\TbdComponentBundle": ["all"]
+          "Tbd\\TwigComponentBundle\\TbdTwigComponentBundle": ["all"]
         },
         "copy-from-recipe": {
           "config/": "%CONFIG_DIR%",
@@ -19,26 +19,13 @@
         ]
       },
       "files": {
-        "config/packages/tbd_component.yaml": {
+        "config/packages/tbd_twig_component.yaml": {
           "contents": [
-            "tbd_component:",
-            "  button:",
-            "    variants:",
-            "      primary: 'text-white fill-white bg-orange-400 hover:bg-orange-500 focus:ring-orange-300'",
-            "    sizes:",
-            "      sm: 'px-2 py-1 text-xs'",
-            "      md: 'px-4 py-2 text-sm'",
-            "      lg: 'px-6 py-4 text-base'",
-            "",
-            "  icon:",
-            "    sizes:",
-            "      sm: 'w-3 h-3'",
-            "      md: 'w-4 h-4'",
-            "      lg: 'w-5 h-5'",
+            "tbd_twig_component:",
             "",
             "twig_component:",
             "  defaults:",
-            "    Tbd\\ComponentBundle\\Twig\\Components\\TBD\\: 'components/tbd/'",
+            "    Tbd\\TwigComponentBundle\\Twig\\Components\\TBD\\: 'components/tbd/'",
             ""
           ],
           "executable": false
