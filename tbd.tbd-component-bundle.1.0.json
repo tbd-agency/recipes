@@ -5,9 +5,6 @@
         "bundles": {
           "Tbd\\TbdComponentBundle\\TbdComponentBundle": ["all"]
         },
-        "copy-from-recipe": {
-          "config/": "%CONFIG_DIR%"
-        },
         "refactor": {
           "assets/bootstrap.js": [
             {
@@ -36,13 +33,13 @@
             "      lg: 'w-5 h-5'",
             "",
             "twig_component:",
-              "defaults:",
-              "Tbd\\TbdComponentBundle\\Twig\\Components\\TBD\\: 'components/tbd/'"
+            "  defaults:",
+            "    Tbd\\TbdComponentBundle\\Twig\\Components\\TBD\\: 'components/tbd/'"
           ],
           "executable": false
         }
       },
-      "ref": "0e3c6c9a592897a14b76f803ae330c4400d9a85e"
+      "ref": "8a2534d9bbabc6c765e0f1209041295ed9c34508"
     }
   }
 }

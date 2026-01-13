@@ -1,3 +1,0 @@
-twig_component:
-  defaults:
-    Tbd\TbdComponentBundle\Twig\Components\TBD\: 'components/tbd/'
