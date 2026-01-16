@@ -1,6 +1,6 @@
 {
   "recipes": {
-    "tbd/twig-component-bundle": ["1.0"]
+    "tbd/twig-component-bundle": ["1.1", "1.0"]
   },
   "branch": "feature/20260116-add-tailwind-config",
   "is_contrib": true,

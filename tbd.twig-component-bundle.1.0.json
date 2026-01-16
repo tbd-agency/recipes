@@ -5,13 +5,6 @@
         "bundles": {
           "Tbd\\TwigComponentBundle\\TbdTwigComponentBundle": ["all"]
         },
-        "package": {
-          "devDependencies": {
-            "tailwindcss": "^3.4.0",
-            "postcss": "^8.4.0",
-            "autoprefixer": "^10.4.0"
-          }
-        },
         "copy-from-recipe": {
           "config/": "%CONFIG_DIR%",
           "assets/": "assets/",
