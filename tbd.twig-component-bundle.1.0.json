@@ -24,6 +24,12 @@
             "position": "bottom",
             "warn_if_missing": false,
             "content": "\n// tbd/twig-component-bundle: ensure Tailwind scans vendor Twig components\n// Appended by the Flex recipe; safe to run multiple times.\ntry {\n    const cfg = module.exports || {};\n    const content = Array.isArray(cfg.content) ? cfg.content : [];\n\n    const extras = [\n        './vendor/tbd/twig-component-bundle/templates/**/*.html.twig',\n        './vendor/tbd/twig-component-bundle/src/**/*.php',\n    ];\n\n    const next = [...content];\n    for (const extra of extras) {\n        if (!next.includes(extra)) {\n            next.push(extra);\n        }\n    }\n\n    cfg.content = next;\n    module.exports = cfg;\n} catch (e) {\n    // noop\n}\n"
+          },
+          {
+            "file": "package.json",
+            "position": "bottom",
+            "warn_if_missing": false,
+            "content": " \"tailwindcss\": \"^3.4.3\","
           }
         ],
         "post-install-output": [
@@ -79,26 +85,9 @@
             ""
           ],
           "executable": false
-        },
-        "package.json": {
-          "contents": [
-            "{",
-            "  \"private\": true,",
-            "  \"devDependencies\": {",
-            "    \"tailwindcss\": \"^3.4.0\",",
-            "    \"postcss\": \"^8.4.0\",",
-            "    \"autoprefixer\": \"^10.4.0\"",
-            "  },",
-            "  \"scripts\": {",
-            "    \"tailwind:build\": \"tailwindcss -i ./assets/styles/app.css -o ./assets/styles/tailwind.css\"",
-            "  }",
-            "}",
-            ""
-          ],
-          "executable": false
         }
       },
-      "ref": "b2d542c49edad43843fd54cd537d4fedd75ccc95"
+      "ref": "b6f1d93ed46d823da13364c4186f3f22402afa04"
     }
   }
 }
