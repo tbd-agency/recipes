@@ -34,11 +34,15 @@
           "  ./vendor/tbd/twig-component-bundle/src/**/*.php"
         ]
       },
+
       "npm": {
         "devDependencies": {
-          "tailwindcss": "^3.4.3"
+          "tailwindcss": "^3.4.3",
+          "postcss": "^8.4.38",
+          "autoprefixer": "^10.4.19"
         }
       },
+
       "files": {
         "config/packages/tbd_twig_component.yaml": {
           "contents": [
@@ -85,7 +89,7 @@
           "executable": false
         }
       },
-      "ref": "33d832b27ed01ba4461b0583a19d1c6dde8e1a1a"
+      "ref": "a84c9b0acc5bfb06f831b13a9cf2dc533d103e2f"
     }
   }
 }
