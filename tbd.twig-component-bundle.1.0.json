@@ -9,7 +9,7 @@
           "config/": "%CONFIG_DIR%",
           "assets/": "assets/",
           "tailwind.config.js": "tailwind.config.js",
-          "postcss.config.js": "postcss.config.js",
+          "postcss.config.js": "postcss.config.js"
         },
         "add-lines": [
           {
@@ -86,7 +86,7 @@
           "executable": false
         }
       },
-      "ref": "714530864f075f61100e5d358b722d579587cad6"
+      "ref": "8fdba360a24126f0aa4f857cc162ec10acd90503"
     }
   }
 }
