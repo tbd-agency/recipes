@@ -10,7 +10,6 @@
           "assets/": "assets/",
           "tailwind.config.js": "tailwind.config.js",
           "postcss.config.js": "postcss.config.js",
-          "package.json": "package.json"
         },
         "add-lines": [
           {
@@ -87,7 +86,7 @@
           "executable": false
         }
       },
-      "ref": "b6f1d93ed46d823da13364c4186f3f22402afa04"
+      "ref": "714530864f075f61100e5d358b722d579587cad6"
     }
   }
 }
