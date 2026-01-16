@@ -72,6 +72,20 @@
           ],
           "executable": false
         },
+        "postcss.config.js": {
+          "contents": [
+            "module.exports = {",
+            "   plugins: {",
+            "    'postcss-import': {},",
+            "    'tailwindcss/nesting': {},",
+            "    tailwindcss: {},",
+            "    autoprefixer: {},",
+            "   },",
+            "}",
+            ""
+          ],
+          "executable": false
+        },
         "package.json": {
           "contents": [
             "{",
