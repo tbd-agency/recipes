@@ -32,14 +32,13 @@
           "and ensure your tailwind.config.js includes:",
           "  ./vendor/tbd/twig-component-bundle/templates/**/*.html.twig",
           "  ./vendor/tbd/twig-component-bundle/src/**/*.php"
-        ]
-      },
-
-      "npm": {
-        "devDependencies": {
-          "tailwindcss": "^3.4.3",
-          "postcss": "^8.4.38",
-          "autoprefixer": "^10.4.19"
+        ],
+        "npm": {
+          "devDependencies": {
+            "tailwindcss": "^3.4.3",
+            "postcss": "^8.4.38",
+            "autoprefixer": "^10.4.19"
+          }
         }
       },
 
@@ -89,7 +88,7 @@
           "executable": false
         }
       },
-      "ref": "a84c9b0acc5bfb06f831b13a9cf2dc533d103e2f"
+      "ref": "c89df184aea29380cb09e76d21e6c6a0c68501bc"
     }
   }
 }
