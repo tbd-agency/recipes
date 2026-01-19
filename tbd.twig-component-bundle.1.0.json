@@ -27,8 +27,8 @@
           "  - After installing Tailwind CSS (or if it is already installed),",
           "    make sure the following paths are included in the `content` array",
           "    of your tailwind.config.js so Tailwind can detect the components:",
-          "      './vendor/tbd/twig-component-bundle/templates/**/*.html.twig'",
-          "      './vendor/tbd/twig-component-bundle/src/**/*.php'",
+          "      './vendor/tbd/twig-component-bundle/templates/**/*.html.twig',",
+          "      './vendor/tbd/twig-component-bundle/src/**/*.php',",
           "",
           "Hotwire Turbo:",
           "  - If Hotwire Turbo is not installed yet, install it by running:",
@@ -49,7 +49,7 @@
           "executable": false
         }
       },
-      "ref": "8b4e0f2e9ad88986777382bd16592ce9b86fcb40"
+      "ref": "edf98e6a6cdcd46f71daab9f76caa4db7526c33e"
     }
   }
 }
