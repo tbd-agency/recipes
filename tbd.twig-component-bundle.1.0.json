@@ -17,18 +17,41 @@
           }
         ],
         "post-install-output": [
-          "This package is built to work with Tailwind CSS and Hotwire Turbo (Turbo Frames).",
+          "This package is built to work with Tailwind CSS, Flowbite and Hotwire Turbo (Turbo Frames).",
           "",
           "Tailwind CSS:",
-          "  - If Tailwind CSS is not installed yet, install and initialize it by running:",
+          "  - If Tailwind CSS is not installed yet, install it by running:",
           "      npm install -D tailwindcss postcss autoprefixer",
-          "      npx tailwindcss init",
           "",
-          "  - After installing Tailwind CSS (or if it is already installed),",
-          "    make sure the following paths are included in the `content` array",
-          "    of your tailwind.config.js so Tailwind can detect the components:",
-          "      './vendor/tbd/twig-component-bundle/templates/**/*.html.twig',",
-          "      './vendor/tbd/twig-component-bundle/src/**/*.php',",
+          "  - Tailwind v3 configuration (tailwind.config.js):",
+          "    - Ensure the following paths are included in the `content` array so Tailwind can detect the components:",
+          "        './vendor/tbd/twig-component-bundle/templates/**/*.html.twig',",
+          "        './vendor/tbd/twig-component-bundle/src/**/*.php',",
+          "",
+          "  - Tailwind v4 configuration (no tailwind.config.js required):",
+          "    - Add these sources to your main CSS entry (e.g. assets/styles/app.css):",
+          "        @source '../../vendor/tbd/twig-component-bundle/templates/**/*.html.twig';",
+          "        @source '../../vendor/tbd/twig-component-bundle/src/**/*.php';",
+          "",
+          "Flowbite:",
+          "  - This bundle uses Flowbite components.",
+          "  - If Flowbite is not installed yet, install it by running:",
+          "      npm install flowbite",
+          "",
+          "  - Add Flowbite JavaScript (recommended when using Turbo):",
+          "      import 'flowbite/dist/flowbite.turbo.js';",
+          "",
+          "  - Tailwind v3 configuration:",
+          "    - Include Flowbite in the `content` array:",
+          "        './node_modules/flowbite/**/*.js',",
+          "    - Register the Flowbite plugin:",
+          "        plugins: [require('flowbite/plugin')],",
+          "",
+          "  - Tailwind v4 configuration:",
+          "    - Add Flowbite as a source in your main CSS entry:",
+          "        @source '../../node_modules/flowbite/**/*.js';",
+          "    - Register the Flowbite plugin:",
+          "        @plugin 'flowbite/plugin';",
           "",
           "Hotwire Turbo:",
           "  - If Hotwire Turbo is not installed yet, install it by running:",
@@ -49,7 +72,7 @@
           "executable": false
         }
       },
-      "ref": "970eedb0f8d91bbcc6f173be873db89e5e6cae28"
+      "ref": "9fa75fd7c5153b9fa63a7b80769deb44a45903da"
     }
   }
 }
