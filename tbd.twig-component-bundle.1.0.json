@@ -3,7 +3,9 @@
     "tbd/twig-component-bundle": {
       "manifest": {
         "bundles": {
-          "Tbd\\TwigComponentBundle\\TbdTwigComponentBundle": ["all"]
+          "Tbd\\TwigComponentBundle\\TbdTwigComponentBundle": [
+            "all"
+          ]
         },
         "copy-from-recipe": {
           "config/": "%CONFIG_DIR%"
@@ -13,7 +15,13 @@
             "file": "assets/bootstrap.js",
             "position": "bottom",
             "warn_if_missing": true,
-            "content": "\n// tbd/twig-component-bundle: register controllers (inside vendor/)\nconst tbdControllers = require.context(\n    '@symfony/stimulus-bridge/lazy-controller-loader!../vendor/tbd/twig-component-bundle/assets/controllers',\n    true,\n    /_controller\\.[jt]sx?$/\n);\n\nfor (const key of tbdControllers.keys()) {\n    const mod = tbdControllers(key);\n\n    const name = key\n        .replace(/^\\.\\//, '')\n        .replace(/\\.[jt]sx?$/, '')\n        .replace(/_controller$/, '')\n        .replace(/\\//g, '--')\n        .replace(/_/g, '-');\n\n    app.register(name, mod.default);\n}\n"
+            "content": "\n// tbd/twig-component-bundle: register controllers (inside vendor/)\nconst tbdControllers = require.context(\n    '@symfony/stimulus-bridge/lazy-controller-loader!../vendor/tbd/twig-component-bundle/assets/controllers',\n    true,\n    /_controller\\.[jt]sx?$/\n);\n\nfor (const key of tbdControllers.keys()) {\n    const mod = tbdControllers(key);\n\n    const name = key\n        .replace(/^\\.\\//, '')\n        .replace(/\\.[jt]sx?$/, '')\n        .replace(/_controller$/, '')\n        .replace(/\\//g, '--')\n        .replace(/_/g, '-');\n\n    if (app.register) {\n        app.register(name, mod.default);\n    }\n}\n"
+          },
+          {
+            "file": "assets/stimulus_bootstrap.js",
+            "position": "bottom",
+            "warn_if_missing": true,
+            "content": "\n// tbd/twig-component-bundle: register controllers (inside vendor/)\n// Note: add this to assets/stimulus_bootstrap.js if assets/bootstrap.js does not exist\nconst tbdControllers = require.context(\n    '@symfony/stimulus-bridge/lazy-controller-loader!../vendor/tbd/twig-component-bundle/assets/controllers',\n    true,\n    /_controller\\.[jt]sx?$/\n);\n\nfor (const key of tbdControllers.keys()) {\n    const mod = tbdControllers(key);\n\n    const name = key\n        .replace(/^\\.\\//, '')\n        .replace(/\\.[jt]sx?$/, '')\n        .replace(/_controller$/, '')\n        .replace(/\\//g, '--')\n        .replace(/_/g, '-');\n\n    if (app.register) {\n        app.register(name, mod.default);\n    }\n}\n"
           }
         ],
         "post-install-output": [
@@ -58,7 +66,6 @@
           "      npm install @hotwired/turbo"
         ]
       },
-
       "files": {
         "config/packages/tbd_twig_component.yaml": {
           "contents": [
@@ -72,7 +79,7 @@
           "executable": false
         }
       },
-      "ref": "9fa75fd7c5153b9fa63a7b80769deb44a45903da"
+      "ref": "7a792e441d6ac1c10eb5433d5b79ddc88dda0a87"
     }
   }
 }
