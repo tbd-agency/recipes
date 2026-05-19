@@ -10,12 +10,6 @@
         "copy-from-recipe": {
           "config/": "%CONFIG_DIR%"
         },
-        "controllers": {
-          "modal": {
-            "enabled": true,
-            "fetch": "eager"
-          }
-        },
         "post-install-output": [
           "This package is built to work with Tailwind CSS, Flowbite and Hotwire Turbo (Turbo Frames).",
           "",
@@ -71,7 +65,7 @@
           "executable": false
         }
       },
-      "ref": "79a99e1432795866d7d4d27cfabe7b1bd0119e28"
+      "ref": "0a78d3166ac21bc58d87a1386633cdb23d34382c"
     }
   }
 }
