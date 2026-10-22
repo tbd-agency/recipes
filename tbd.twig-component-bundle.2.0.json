@@ -1,0 +1,95 @@
+{
+  "manifests": {
+    "tbd/twig-component-bundle": {
+      "manifest": {
+        "bundles": {
+          "Tbd\\TwigComponentBundle\\TbdTwigComponentBundle": [
+            "all"
+          ]
+        },
+        "copy-from-recipe": {
+          "config/": "%CONFIG_DIR%"
+        },
+        "add-lines": [
+          {
+            "file": "assets/styles/app.css",
+            "position": "after_target",
+            "target": "tailwindcss",
+            "warn_if_missing": true,
+            "content": "@import '../../vendor/tbd/twig-component-bundle/assets/styles/theme.css';"
+          },
+          {
+            "file": "assets/styles/app.css",
+            "position": "after_target",
+            "target": "twig-component-bundle/assets/styles/theme.css",
+            "warn_if_missing": true,
+            "content": "@source '../../vendor/tbd/twig-component-bundle/templates/**/*.html.twig';"
+          },
+          {
+            "file": "assets/styles/app.css",
+            "position": "after_target",
+            "target": "twig-component-bundle/templates/**/*.html.twig",
+            "warn_if_missing": true,
+            "content": "@source '../../vendor/tbd/twig-component-bundle/src/**/*.php';"
+          },
+          {
+            "file": "assets/styles/app.css",
+            "position": "after_target",
+            "target": "twig-component-bundle/src/**/*.php",
+            "warn_if_missing": true,
+            "content": "@source '../../vendor/tbd/stimulus-bundle/assets/src/**/*.js';"
+          }
+        ],
+        "post-install-output": [
+          "This package is built to work with Tailwind CSS v4, Flowbite and Hotwire Turbo (Turbo Frames).",
+          "",
+          "Tailwind CSS:",
+          "  - If Tailwind CSS v4 is not installed yet, install it by running:",
+          "      npm install -D tailwindcss @tailwindcss/postcss",
+          "",
+          "  - The recipe adds these lines to assets/styles/app.css, right after the Tailwind import",
+          "    (lines that are already present are skipped):",
+          "        @import '../../vendor/tbd/twig-component-bundle/assets/styles/theme.css';",
+          "        @source '../../vendor/tbd/twig-component-bundle/templates/**/*.html.twig';",
+          "        @source '../../vendor/tbd/twig-component-bundle/src/**/*.php';",
+          "        @source '../../vendor/tbd/stimulus-bundle/assets/src/**/*.js';",
+          "    If your CSS entry lives elsewhere, add them there yourself.",
+          "    Without theme.css the components render without colours.",
+          "",
+          "  - To use your own colours, override the --color-tbd-* tokens for both :root and html.dark",
+          "    in your app.css (see the README of tbd/twig-component-bundle).",
+          "",
+          "Flowbite:",
+          "  - This bundle uses Flowbite components.",
+          "  - If Flowbite is not installed yet, install it by running:",
+          "      npm install flowbite",
+          "",
+          "  - Add Flowbite JavaScript (recommended when using Turbo):",
+          "      import 'flowbite/dist/flowbite.turbo.js';",
+          "",
+          "  - Add Flowbite to your main CSS entry:",
+          "        @source '../../node_modules/flowbite/**/*.js';",
+          "        @plugin 'flowbite/plugin';",
+          "",
+          "Hotwire Turbo:",
+          "  - If Hotwire Turbo is not installed yet, install it by running:",
+          "      npm install @hotwired/turbo"
+        ]
+      },
+      "files": {
+        "config/packages/tbd_twig_component.yaml": {
+          "contents": [
+            "tbd_twig_component:",
+            "",
+            "twig_component:",
+            "  defaults:",
+            "    Tbd\\TwigComponentBundle\\Twig\\Components\\TBD\\: 'components/tbd/'",
+            ""
+          ],
+          "executable": false
+        }
+      },
+      "ref": "72655fc89a483a5b571a3823fac25107f05d17c3"
+    }
+  }
+}
