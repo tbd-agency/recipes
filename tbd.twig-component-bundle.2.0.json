@@ -8,7 +8,7 @@
           ]
         },
         "copy-from-recipe": {
-          "config/": "%CONFIG_DIR%"
+          "config/": "%CONFIG_DIR%/"
         },
         "add-lines": [
           {
@@ -89,7 +89,7 @@
           "executable": false
         }
       },
-      "ref": "72655fc89a483a5b571a3823fac25107f05d17c3"
+      "ref": "29e00f75905f9b21be3f51380c41551182984947"
     }
   }
 }
